@@ -40,10 +40,16 @@ public class Player_Movement : MonoBehaviour
         if (horizontal > 0f)
         {
             GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<Animator>().SetBool("isMoving", true);
         }
         else if (horizontal < 0f)
         {
             GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<Animator>().SetBool("isMoving", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("isMoving", false);
         }
 
         if (hasGift)
