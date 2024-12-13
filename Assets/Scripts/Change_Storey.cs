@@ -27,7 +27,7 @@ public class Change_Storey : MonoBehaviour
     {
         if (onStairs)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 GameObject.Find("Player").transform.position = endPosition;
             }

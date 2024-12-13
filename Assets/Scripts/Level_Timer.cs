@@ -18,7 +18,14 @@ public class Level_Timer : MonoBehaviour
 
     private void Update()
     {
-        timer.text = "Time: " + levelTime;
+        if (levelTime >= 0)
+        {
+            timer.text = "Time: " + levelTime;
+        }
+        else
+        {
+            timer.text = "Time: 0";
+        }
     }
 
     private IEnumerator TimePass()

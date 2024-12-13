@@ -28,7 +28,7 @@ public class Elevator : MonoBehaviour
     {
         if (onElevator)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 GameObject.Find("Player").GetComponent<Player_Movement>().isGameActive = false;
                 GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
