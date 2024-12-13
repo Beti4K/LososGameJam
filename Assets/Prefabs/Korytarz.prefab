@@ -117,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.128613, y: 0.032278776}
+  m_Offset: {x: 0.1648984, y: 0.032278776}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -128,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.365983, y: 3.8969693}
+  m_Size: {x: 0.4385538, y: 3.8969693}
   m_EdgeRadius: 0
 --- !u!1 &3739106145998567001
 GameObject:
@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 3638920365840537499}
   - component: {fileID: 6294356568401229055}
   - component: {fileID: 528960516868833655}
+  - component: {fileID: -289213567730080213}
   m_Layer: 0
   m_Name: Korytarz
   m_TagString: Floor
@@ -262,6 +263,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.7, y: 0.5190253}
   m_EdgeRadius: 0
+--- !u!114 &-289213567730080213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3739106145998567001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918a52f7ec1f0874b9ecfc20890f26db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallpaper:
+  - {fileID: 21300000, guid: 0ec72a730488ac14b9425c93c6c5d419, type: 3}
+  - {fileID: 21300000, guid: 0b0d1a1abc8fc2645a412af2a31600e5, type: 3}
+  - {fileID: 21300000, guid: a908412f667f06743867807de4c94fcb, type: 3}
+  - {fileID: 21300000, guid: 42ad3b376df0149408de808ce15d2e5c, type: 3}
+  - {fileID: 21300000, guid: 69470979fa0db1a4db54c9d3f721a34d, type: 3}
+  - {fileID: 21300000, guid: 2f7838095fc782b4fb4f36f46a344d40, type: 3}
 --- !u!1 &6282045499364899561
 GameObject:
   m_ObjectHideFlags: 0

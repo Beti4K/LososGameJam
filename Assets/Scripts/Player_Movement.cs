@@ -8,6 +8,7 @@ public class Player_Movement : MonoBehaviour
     public float horizontal;
 
     private bool isFloored;
+    public bool hasGift;
 
     [SerializeField] float force;
     [SerializeField] float speed;
@@ -34,6 +35,24 @@ public class Player_Movement : MonoBehaviour
                     isFloored = false;
                 }
             }
+        }
+
+        if (horizontal > 0f)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (horizontal < 0f)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+        if (hasGift)
+        {
+            GetComponent<Animator>().SetBool("hasGift", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("hasGift", false);
         }
     }
 

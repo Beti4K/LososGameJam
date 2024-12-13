@@ -8,6 +8,7 @@ public class Grandma : MonoBehaviour
 
     [SerializeField] float throwDelay;
     [SerializeField] GameObject[] things;
+    [SerializeField] GameObject parent;
 
     private bool seesPlayer;
 
@@ -15,10 +16,10 @@ public class Grandma : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.transform.position.x - transform.position.x < 0)
+            if (collision.transform.position.x - transform.position.x > 0)
             {
                 direction *= -1;
-                transform.localScale = new Vector3(transform.localScale.x * direction, transform.localScale.y, transform.localScale.z);
+                parent.transform.localScale = new Vector3(transform.localScale.x * direction, transform.localScale.y, transform.localScale.z);
             }
 
             seesPlayer = true;
