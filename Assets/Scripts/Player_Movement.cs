@@ -9,6 +9,7 @@ public class Player_Movement : MonoBehaviour
 
     private bool isFloored;
     public bool hasGift;
+    public bool isOutside;
 
     [SerializeField] float force;
     [SerializeField] float speed;
@@ -17,6 +18,7 @@ public class Player_Movement : MonoBehaviour
     {
         isGameActive = true;
         isFloored = true;
+        isOutside = false;
     }
 
     void Update()
@@ -29,10 +31,13 @@ public class Player_Movement : MonoBehaviour
 
             if (isFloored)
             {
+                GetComponent<Animator>().SetBool("isFloored", true);
+
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     GetComponent<Rigidbody2D>().AddForce(Vector2.up * force, ForceMode2D.Impulse);
                     isFloored = false;
+                    GetComponent<Animator>().SetBool("isFloored", false);
                 }
             }
         }
