@@ -44,9 +44,9 @@ public class Elevator : MonoBehaviour
 
         if (isMoving)
         {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, endPosition, time * Time.deltaTime);
             player.GetComponent<Collider2D>().enabled = false;
             player.GetComponent<Rigidbody2D>().gravityScale = 0;
+            player.transform.position = Vector3.MoveTowards(player.transform.position, endPosition, time * Time.deltaTime);
         }
         else
         {
