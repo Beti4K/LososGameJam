@@ -199,8 +199,6 @@ MonoBehaviour:
   numberDisplayText: {fileID: 5778483538916423464}
   giftDisplay: {fileID: 5720503892846205753}
   giftsLeftText: {fileID: 6218213678478437105}
-  wheels: {fileID: 880639735867215473}
-  winScreen: {fileID: 0}
   maxPoints: 5
   targetDoor: 0
   points: 0

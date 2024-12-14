@@ -19,22 +19,12 @@ public class Furgonetka : MonoBehaviour
     [SerializeField] GameObject giftDisplay;
     [SerializeField] TextMeshProUGUI giftsLeftText;
 
-    [SerializeField] GameObject wheels;
-
     [SerializeField] GameObject winScreen;
 
     [SerializeField] int maxPoints;
 
     public int targetDoor;
     public int points;
-
-    private void Start()
-    {
-        numberDisplay.SetActive(false);
-        giftDisplay.SetActive(false);
-        points = 0;
-        doors = GameObject.FindGameObjectsWithTag("Door");
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,6 +44,13 @@ public class Furgonetka : MonoBehaviour
         giftDisplay.SetActive(false);
     }
 
+    private void Start()
+    {
+        numberDisplay.SetActive(false);
+        points = 0;
+        doors = GameObject.FindGameObjectsWithTag("Door");
+    }
+
     void Update()
     {
         if (isInVan && !player.hasGift)
@@ -70,13 +67,11 @@ public class Furgonetka : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = true;
-            wheels.GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
-            wheels.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         if (points == maxPoints)
