@@ -5,6 +5,11 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     private bool onDoor;
+    [SerializeField] Sprite[] sprites;
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length)];
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

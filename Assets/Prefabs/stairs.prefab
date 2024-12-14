@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5553113892250752650}
   - component: {fileID: 2743149495339230850}
   - component: {fileID: 7663024933579789204}
+  - component: {fileID: 5210117223794517834}
   m_Layer: 0
   m_Name: stairs
   m_TagString: Untagged
@@ -130,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 2.840722}
   m_EdgeRadius: 0
+--- !u!114 &5210117223794517834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5765963118824332779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88237d75d44f804ba7a42867f91204b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPosition: {x: -6.65, y: 0.87, z: 0}
