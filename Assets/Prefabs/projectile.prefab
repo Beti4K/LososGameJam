@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penalty: 2
-  force: 15
+  force: 10
 --- !u!50 &8333574740466202501
 Rigidbody2D:
   serializedVersion: 4

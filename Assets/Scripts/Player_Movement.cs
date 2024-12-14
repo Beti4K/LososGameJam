@@ -29,7 +29,7 @@ public class Player_Movement : MonoBehaviour
 
             transform.position += new Vector3(horizontal * speed * Time.deltaTime, 0, 0);
 
-            if (isFloored)
+            if (isFloored && isGameActive)
             {
                 GetComponent<Animator>().SetBool("isFloored", true);
 
@@ -78,5 +78,7 @@ public class Player_Movement : MonoBehaviour
     public void EndOfLevel()
     {
         isGameActive = false;
+
+        GetComponent<Animator>().SetBool("isEnd", true);
     }
 }

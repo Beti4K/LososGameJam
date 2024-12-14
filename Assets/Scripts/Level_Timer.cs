@@ -20,11 +20,11 @@ public class Level_Timer : MonoBehaviour
     {
         if (levelTime >= 0)
         {
-            timer.text = "Time: " + levelTime;
+            timer.text = "TIME: " + levelTime;
         }
         else
         {
-            timer.text = "Time: 0";
+            timer.text = "TIME: 0";
         }
     }
 
@@ -53,6 +53,14 @@ public class Level_Timer : MonoBehaviour
         else
         {
             levelTime -= penalty;
+            timer.color = Color.red;
+            StartCoroutine(RedMoment());
         }
+    }
+
+    private IEnumerator RedMoment()
+    {
+        yield return new WaitForSeconds(0.3f);
+        timer.color = Color.black;
     }
 }
