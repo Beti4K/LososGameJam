@@ -18,8 +18,10 @@ public class Chihuahua : MonoBehaviour
             if (collision.transform.position.x - transform.position.x < 0)
             {
                 speed *= -1;
+                GetComponent<SpriteRenderer>().flipX = true;
             }
 
+            GetComponent<Animator>().Play("Idle_L");
             seesPlayer = true;
             StartCoroutine(WaitBeforeAttack());
         }
@@ -43,6 +45,15 @@ public class Chihuahua : MonoBehaviour
         else
         {
             speed *= -1;
+
+            if (GetComponent<SpriteRenderer>().flipX)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
     }
 
@@ -51,7 +62,12 @@ public class Chihuahua : MonoBehaviour
         if (seesPlayer && isAttacking && GameObject.Find("Player").GetComponent<Player_Movement>().isGameActive == true)
         {
             transform.Translate(speed * Time.deltaTime, 0, 0);
+            GetComponent<Animator>().SetBool("seesPlayer", true);
         }
+        else
+        {
+            GetComponent<Animator>().SetBool("seesPlayer", false);
+        }    
     }
 
     private IEnumerator WaitBeforeAttack()
@@ -59,5 +75,11 @@ public class Chihuahua : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         waitTime = 0;
         isAttacking = true;
+
+        if (GameObject.Find("Player").transform.position.x - transform.position.x < 0)
+        {
+            speed *= -1;
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 }

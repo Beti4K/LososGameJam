@@ -21,7 +21,7 @@ public class FrontDoor : MonoBehaviour
     {
         if (atDoor)
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
                 if (!GameObject.Find("Player").GetComponent<Player_Movement>().isOutside)
                 {

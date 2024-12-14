@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Change_Storey : MonoBehaviour
+public class Laundry_Down : MonoBehaviour
 {
     [SerializeField] Vector3 endPosition;
     private bool onStairs;
@@ -29,7 +29,6 @@ public class Change_Storey : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
-                GameObject.Find("Player").GetComponent<Animator>().Play("Enter");
                 StartCoroutine(AnimDelay());
             }
         }
@@ -37,7 +36,9 @@ public class Change_Storey : MonoBehaviour
 
     private IEnumerator AnimDelay()
     {
-        yield return new WaitForSeconds(0.3f);
+        GameObject.Find("Player").GetComponent<Animator>().Play("Enter");
+
+        yield return new WaitForSeconds(0.1f);
         GameObject.Find("Player").transform.position = endPosition;
 
         if (GameObject.Find("Player").GetComponent<Player_Movement>().hasGift)
@@ -49,7 +50,7 @@ public class Change_Storey : MonoBehaviour
             GameObject.Find("Player").GetComponent<Animator>().Play("Out_nogift");
         }
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
 
         if (GameObject.Find("Player").GetComponent<Player_Movement>().hasGift)
         {
