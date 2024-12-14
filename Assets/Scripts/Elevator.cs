@@ -44,14 +44,7 @@ public class Elevator : MonoBehaviour
 
         if (isMoving)
         {
-            player.GetComponent<Collider2D>().enabled = false;
-            player.GetComponent<Rigidbody2D>().gravityScale = 0;
             player.transform.position = Vector3.MoveTowards(player.transform.position, endPosition, time * Time.deltaTime);
-        }
-        else
-        {
-            player.GetComponent<Collider2D>().enabled = true;
-            player.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }
 
@@ -62,9 +55,13 @@ public class Elevator : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+        player.GetComponent<Collider2D>().enabled = false;
+        player.GetComponent<Rigidbody2D>().gravityScale = 0;
         isMoving = true;
 
         yield return new WaitForSeconds(time);
+        player.GetComponent<Collider2D>().enabled = true;
+        player.GetComponent<Rigidbody2D>().gravityScale = 1;
         isMoving = false;
 
         player.GetComponent<Player_Movement>().isGameActive = true;
