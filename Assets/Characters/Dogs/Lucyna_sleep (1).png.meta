@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59a77e16ac593b14fb76520e36958187
+guid: 10d6af40dde6bcd49888a6bb45e1cfc5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lucyna_sleep_0
+      name: Lucyna_sleep (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
+        y: 140
         width: 140
-        height: 100
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d64ae2c50c0c6240ac5947f442f4d50
-      internalID: 1267729505
+      spriteID: 63f1b173d520d644c982c59d407446e8
+      internalID: -1682580645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucyna_sleep_1
+      name: Lucyna_sleep (1)_1
       rect:
         serializedVersion: 2
         x: 140
-        y: 100
+        y: 140
         width: 140
-        height: 100
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82f40a3c5c5fae74e87f72c97bbb2251
-      internalID: 2016544268
+      spriteID: 3a35ffcdc3fef7e46aac715bb1710417
+      internalID: -995214498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucyna_sleep_2
+      name: Lucyna_sleep (1)_2
       rect:
         serializedVersion: 2
         x: 280
-        y: 100
+        y: 140
         width: 140
-        height: 100
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a94c0866e827574b953f613593e5b09
-      internalID: -1533814908
+      spriteID: 403e8c417e73edb4786c3cc70a9e5697
+      internalID: -1965331888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucyna_sleep_3
+      name: Lucyna_sleep (1)_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 140
-        height: 100
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acd83fc41e1de8f4097e35f043debe07
-      internalID: 1213597663
+      spriteID: c234adf71a5280345a8c87bf9b023bac
+      internalID: 1744626325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucyna_sleep_4
+      name: Lucyna_sleep (1)_4
       rect:
         serializedVersion: 2
         x: 140
         y: 0
         width: 140
-        height: 100
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eb7fbda2932e4a448c5582012ef3868
-      internalID: 1838712490
+      spriteID: 2c128188039ca24429c906f66f502a32
+      internalID: -581722554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lucyna_sleep_5
+      name: Lucyna_sleep (1)_5
       rect:
         serializedVersion: 2
         x: 280
         y: 0
         width: 140
-        height: 100
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dc79221a6f61e2458f8ec06a198e1f6
-      internalID: -153304588
+      spriteID: 81fa7f021419c3f40983e922d4ff1c14
+      internalID: 1701664124
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lucyna_sleep_0: 1267729505
-      Lucyna_sleep_1: 2016544268
-      Lucyna_sleep_2: -1533814908
-      Lucyna_sleep_3: 1213597663
-      Lucyna_sleep_4: 1838712490
-      Lucyna_sleep_5: -153304588
+      Lucyna_sleep (1)_0: -1682580645
+      Lucyna_sleep (1)_1: -995214498
+      Lucyna_sleep (1)_2: -1965331888
+      Lucyna_sleep (1)_3: 1744626325
+      Lucyna_sleep (1)_4: -581722554
+      Lucyna_sleep (1)_5: 1701664124
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

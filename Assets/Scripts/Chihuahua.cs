@@ -21,7 +21,8 @@ public class Chihuahua : MonoBehaviour
                 GetComponent<SpriteRenderer>().flipX = true;
             }
 
-            GetComponent<Animator>().Play("Idle_L");
+            GetComponent<Animator>().SetBool("wakesUp", true);
+
             seesPlayer = true;
             StartCoroutine(WaitBeforeAttack());
         }
@@ -40,7 +41,7 @@ public class Chihuahua : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameObject.Find("level_timer").GetComponent<Level_Timer>().TimePenalty(penalty);
+            GameObject.Find("level_timer").GetComponent<Level_Stress>().JollyPenalty(penalty);
         }
         else
         {
