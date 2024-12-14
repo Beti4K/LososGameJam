@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2867502727870275634}
   - component: {fileID: 2139374584061980039}
   - component: {fileID: 4077011860840969905}
+  - component: {fileID: 692343794839430534}
   m_Layer: 0
   m_Name: grandma_kid
   m_TagString: Untagged
@@ -110,7 +111,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 44877121, guid: d612dddf5e407d741a1b62633907ddb0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5, y: 3.5}
@@ -152,13 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6994dc5625f414391f73b9f759f2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwDelay: 0
+  direction: 1
+  throwDelay: 5
   things:
   - {fileID: 5890973701063583125, guid: a790e95805666c84183d91cb98ffdf11, type: 3}
   - {fileID: 2373462383214878072, guid: 28718f9918fbeab4cb2acf7c435c2784, type: 3}
   - {fileID: 1783367360844889068, guid: 1cb77a4a03c538f4c8c23f6209495033, type: 3}
   - {fileID: 780308376022363401, guid: 7f2470e6aa1d6064cb2be275f6e9432c, type: 3}
-  - {fileID: 0}
+  - {fileID: 5715961577371769002, guid: 7ce88a1b878cc8349a17e1a798296c4d, type: 3}
   parent: {fileID: 6428916553797492560}
 --- !u!61 &4077011860840969905
 BoxCollider2D:
@@ -204,4 +206,49 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 12, y: 1.8855618}
+  m_EdgeRadius: 0
+--- !u!61 &692343794839430534
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999080845717100433}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03611207, y: -0.86892307}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 3.5}
+    newSize: {x: 5, y: 3.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1798725, y: 0.5590296}
   m_EdgeRadius: 0

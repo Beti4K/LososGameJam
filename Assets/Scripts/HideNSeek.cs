@@ -23,6 +23,18 @@ public class HideNSeek : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (GameObject.Find("Player").GetComponent<Player_Movement>().isOutside)
+        {
+            GetComponent<Collider2D>().enabled = false;
+        }
+        else
+        {
+            GetComponent<Collider2D>().enabled = true;
+        }
+    }
+
     private IEnumerator LookDelay()
     {
         yield return new WaitForSeconds(hiddenTime);

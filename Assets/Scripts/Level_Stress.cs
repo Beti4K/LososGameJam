@@ -13,7 +13,7 @@ public class Level_Stress : MonoBehaviour
 
         if (jollyAmount == 0)
         {
-            GameObject.Find("Player").GetComponent<Player_Movement>().EndOfLevel();
+            GameObject.Find("Player").GetComponent<Player_Movement>().LevelLose();
         }
     }
 

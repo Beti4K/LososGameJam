@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class Door : MonoBehaviour
 {
-    private bool onDoor;
+    private bool onDoor = false;
     private Furgonetka doorController;
 
     [SerializeField] Sprite[] sprites;
@@ -42,12 +42,14 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        if (onDoor)
-        {
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                GameObject.Find("Player").GetComponent<Player_Movement>().hasGift = false;
-            }
-        }
+         if (Input.GetKeyDown(KeyCode.E) && onDoor)
+         {
+             GameObject.Find("Player").GetComponent<Player_Movement>().hasGift = false;
+                
+             if (doorController.targetDoor == number)
+             {
+                    doorController.points += 1;
+             }
+         }
     }
 }

@@ -20,11 +20,11 @@ public class Level_Timer : MonoBehaviour
     {
         if (levelTime >= 0)
         {
-            timer.text = "TIME: " + levelTime;
+            timer.text = levelTime.ToString();
         }
         else
         {
-            timer.text = "TIME: 0";
+            timer.text = "0";
         }
     }
 
@@ -35,7 +35,7 @@ public class Level_Timer : MonoBehaviour
         
         if (levelTime <= 0)
         {
-            player.GetComponent<Player_Movement>().EndOfLevel();
+            player.GetComponent<Player_Movement>().LevelLose();
         }
         else
         {
@@ -47,7 +47,7 @@ public class Level_Timer : MonoBehaviour
     {
         if (levelTime <= penalty)
         {
-            player.GetComponent<Player_Movement>().EndOfLevel();
+            player.GetComponent<Player_Movement>().LevelLose();
             levelTime = 0;
         }
         else

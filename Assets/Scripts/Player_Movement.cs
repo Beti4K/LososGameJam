@@ -14,6 +14,8 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float force;
     [SerializeField] float speed;
 
+    [SerializeField] GameObject loseScreen;
+
     void Start()
     {
         isGameActive = true;
@@ -75,10 +77,11 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-    public void EndOfLevel()
+    public void LevelLose()
     {
         isGameActive = false;
 
         GetComponent<Animator>().SetBool("isEnd", true);
+        loseScreen.SetActive(true);
     }
 }
