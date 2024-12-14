@@ -9,9 +9,12 @@ public class Crash : MonoBehaviour
     [SerializeField] int degrees;
 
     private Level_Stress levelStress;
+    private int direction;
     private void Start()
     {
-        GetComponent<Rigidbody2D>().AddForce(new Vector2 (1, 0) * force, ForceMode2D.Impulse);
+        direction = GameObject.Find("grandma_kid").GetComponent<Grandma>().direction;
+
+        GetComponent<Rigidbody2D>().AddForce(new Vector2 (direction, 0) * force, ForceMode2D.Impulse);
         levelStress = GameObject.Find("level_timer").GetComponent<Level_Stress>();
     }
     private void Update()

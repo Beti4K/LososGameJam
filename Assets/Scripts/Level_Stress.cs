@@ -21,5 +21,9 @@ public class Level_Stress : MonoBehaviour
     {
         jollyAmount -= amount;
 
+        if (jollyAmount > 100)
+        {
+            jollyAmount = 100;
+        }
     }
 }

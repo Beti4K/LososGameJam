@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grandma : MonoBehaviour
 {
-    private int direction = 1;
+    public int direction = 1;
 
     [SerializeField] float throwDelay;
     [SerializeField] GameObject[] things;
@@ -16,12 +16,6 @@ public class Grandma : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.transform.position.x - transform.position.x > 0)
-            {
-                direction *= -1;
-                parent.transform.localScale = new Vector3(transform.localScale.x * direction, transform.localScale.y, transform.localScale.z);
-            }
-
             seesPlayer = true;
             StartCoroutine(WaitForThrow());
         }
@@ -35,10 +29,32 @@ public class Grandma : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (seesPlayer)
+        {
+            if (GameObject.Find("Player").transform.position.x - parent.transform.position.x > 0 && direction == -1)
+            {
+                direction *= -1;
+                parent.transform.localScale = new Vector3(transform.localScale.x * direction, transform.localScale.y, transform.localScale.z);
+            }
+            else if (GameObject.Find("Player").transform.position.x - parent.transform.position.x < 0 && direction == 1)
+            {
+                direction *= -1;
+                parent.transform.localScale = new Vector3(transform.localScale.x * direction, transform.localScale.y, transform.localScale.z);
+            }
+        }
+    }
+
     private IEnumerator WaitForThrow()
     {
         yield return new WaitForSeconds(throwDelay);
+
+        GetComponent<Animator>().SetBool("isThrowing", true);
+        yield return new WaitForSeconds(0.33f);
         Instantiate(things[Random.Range(0, things.Length)], transform.position, Quaternion.identity);
+
+        GetComponent<Animator>().SetBool("isThrowing", false);
 
         if (seesPlayer)
         {
