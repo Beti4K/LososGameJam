@@ -5,7 +5,8 @@ using UnityEngine;
 public class FrontDoor : MonoBehaviour
 {
     private bool atDoor;
-    [SerializeField] Vector3 movePlayer; 
+    [SerializeField] Vector3 movePlayer;
+    [SerializeField] Corridor corridor;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,20 +20,18 @@ public class FrontDoor : MonoBehaviour
 
     void Update()
     {
-        if (atDoor)
+        if (atDoor && (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)))
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            if (GameObject.Find("Player").GetComponent<Player_Movement>().isOutside)
             {
-                if (!GameObject.Find("Player").GetComponent<Player_Movement>().isOutside)
-                {
-                    GameObject.Find("Player").GetComponent<Player_Movement>().isOutside = true;
-                }
-                else
-                {
-                    GameObject.Find("Player").GetComponent<Player_Movement>().isOutside = false;
-                }
-                GameObject.Find("Player").transform.position = movePlayer;
+                GameObject.Find("Player").GetComponent<Player_Movement>().isOutside = false;
             }
+            else
+            {
+                GameObject.Find("Player").GetComponent<Player_Movement>().isOutside = true;
+            }
+
+            GameObject.Find("Player").transform.position = movePlayer;
         }
     }
 }

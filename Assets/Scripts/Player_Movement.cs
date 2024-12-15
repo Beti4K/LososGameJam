@@ -20,7 +20,6 @@ public class Player_Movement : MonoBehaviour
     {
         isGameActive = true;
         isFloored = true;
-        isOutside = false;
     }
 
     void Update()

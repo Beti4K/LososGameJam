@@ -15,12 +15,6 @@ public class Chihuahua : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.transform.position.x - transform.position.x < 0)
-            {
-                speed *= -1;
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
-
             GetComponent<Animator>().SetBool("wakesUp", true);
 
             seesPlayer = true;
@@ -43,19 +37,6 @@ public class Chihuahua : MonoBehaviour
         {
             GameObject.Find("level_timer").GetComponent<Level_Stress>().JollyPenalty(penalty);
         }
-        else
-        {
-            speed *= -1;
-
-            if (GetComponent<SpriteRenderer>().flipX)
-            {
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
-        }
     }
 
     void Update()
@@ -64,6 +45,18 @@ public class Chihuahua : MonoBehaviour
         {
             transform.Translate(speed * Time.deltaTime, 0, 0);
             GetComponent<Animator>().SetBool("seesPlayer", true);
+
+
+            if (GameObject.Find("Player").transform.position.x - transform.position.x > 0)
+            {
+                speed = 2;
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (GameObject.Find("Player").transform.position.x - transform.position.x < 0)
+            {
+                speed = -2;
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
         else
         {

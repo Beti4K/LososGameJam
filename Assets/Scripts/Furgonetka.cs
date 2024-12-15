@@ -20,6 +20,7 @@ public class Furgonetka : MonoBehaviour
     [SerializeField] TextMeshProUGUI giftsLeftText;
 
     [SerializeField] GameObject wheels;
+    [SerializeField] GameObject chopaki;
 
     [SerializeField] GameObject winScreen;
 
@@ -71,12 +72,14 @@ public class Furgonetka : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = true;
             wheels.GetComponent<SpriteRenderer>().enabled = true;
+            chopaki.GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
             wheels.GetComponent<SpriteRenderer>().enabled = false;
+            chopaki.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         if (points == maxPoints)

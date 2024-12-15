@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -1409411103
   m_SortingLayer: 1
   m_SortingOrder: 7
-  m_Sprite: {fileID: 146935930, guid: 8c7c6e2f53b399649b7aa0f8e95b838a, type: 3}
+  m_Sprite: {fileID: 879689307, guid: 4fe8a0bcb8aa41e4784587b568be53e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -195,7 +195,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameActive: 0
   horizontal: 0
-  hasGift: 1
-  isOutside: 0
+  hasGift: 0
+  isOutside: 1
   force: 5
   speed: 5
+  loseScreen: {fileID: 0}

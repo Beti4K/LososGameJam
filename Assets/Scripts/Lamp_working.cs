@@ -12,7 +12,7 @@ public class Lamp_working : MonoBehaviour
 
     private void Update()
     {
-        if(GameObject.Find("Player").GetComponent<Player_Movement>().isOutside)
+        if (GameObject.Find("Player").GetComponent<Player_Movement>().isOutside)
         {
             GetComponent<Light2D>().enabled = false;
         }
