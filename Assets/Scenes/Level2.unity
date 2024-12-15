@@ -993,14 +993,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: level_UI
       objectReference: {fileID: 0}
-    - target: {fileID: 4716265267739283333, guid: badae702bd8c26442939e352e1aeb9b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163541841767197954, guid: badae702bd8c26442939e352e1aeb9b8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7710998758016910018, guid: badae702bd8c26442939e352e1aeb9b8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
