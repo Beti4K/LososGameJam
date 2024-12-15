@@ -198,5 +198,5 @@ MonoBehaviour:
   hasGift: 0
   isOutside: 1
   force: 5
-  speed: 5
+  speed: 7
   loseScreen: {fileID: 0}

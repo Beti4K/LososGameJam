@@ -28,7 +28,7 @@ public class FrontDoor : MonoBehaviour
 
     void Update()
     {
-        if (atDoor && (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)))
+        if (atDoor && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)))
         {
             StartCoroutine(Enter());
         }

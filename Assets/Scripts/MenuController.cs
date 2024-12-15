@@ -29,4 +29,12 @@ public class MenuController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+        }
+    }
 }

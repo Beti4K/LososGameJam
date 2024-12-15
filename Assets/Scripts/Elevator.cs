@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-    [SerializeField] Vector3 endPosition;
-    [SerializeField] float time;
+    public Vector3 endPosition;
+    public float time;
 
     private bool onElevator;
     private bool isMoving;

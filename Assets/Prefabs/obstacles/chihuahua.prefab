@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8848437458424269005}
   m_Layer: 0
   m_Name: chihuahua
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedAmount: 3
-  penalty: 1
+  penalty: 10
   waitTime: 1.5
 --- !u!61 &1963448415428013641
 BoxCollider2D:

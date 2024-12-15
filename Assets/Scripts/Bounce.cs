@@ -7,10 +7,10 @@ public class Bounce : MonoBehaviour
     private Vector3 startPosition;
     private void Start()
     {
-        startPosition = transform.position;
+        startPosition = transform.localPosition;
     }
     void Update()
     {
-        transform.position = new Vector3 (startPosition.x, startPosition.y + Mathf.PingPong(Time.time/4, 0.1f), startPosition.z);
+        transform.localPosition = new Vector3 (startPosition.x, startPosition.y + Mathf.PingPong(Time.time/4, 0.1f), startPosition.z);
     }
 }
