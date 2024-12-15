@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  throwDelay: 5
+  throwDelay: 2
   things:
   - {fileID: 5890973701063583125, guid: a790e95805666c84183d91cb98ffdf11, type: 3}
   - {fileID: 2373462383214878072, guid: 28718f9918fbeab4cb2acf7c435c2784, type: 3}
@@ -205,7 +205,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 1.8855618}
+  m_Size: {x: 31, y: 1.8855618}
   m_EdgeRadius: 0
 --- !u!61 &692343794839430534
 BoxCollider2D:

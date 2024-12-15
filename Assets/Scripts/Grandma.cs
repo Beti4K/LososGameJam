@@ -52,7 +52,15 @@ public class Grandma : MonoBehaviour
 
         GetComponent<Animator>().SetBool("isThrowing", true);
         yield return new WaitForSeconds(0.33f);
-        Instantiate(things[Random.Range(0, things.Length)], transform.position, Quaternion.identity);
+
+        if (direction > 0)
+        {
+            Instantiate(things[Random.Range(0, things.Length)], transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(things[Random.Range(0, things.Length)], transform.position, Quaternion.Inverse(Quaternion.identity));
+        }
 
         GetComponent<Animator>().SetBool("isThrowing", false);
 

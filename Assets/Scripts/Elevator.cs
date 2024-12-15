@@ -11,10 +11,18 @@ public class Elevator : MonoBehaviour
     private bool isMoving;
 
     private GameObject player;
+    [SerializeField] GameObject brokenSign;
+    [SerializeField] bool isBroken;
 
     private void Start()
     {
         player = GameObject.Find("Player");
+
+        if (isBroken)
+        {
+            endPosition = transform.localPosition;
+            brokenSign.SetActive(true);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

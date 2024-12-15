@@ -7,7 +7,7 @@ public class Player_Movement : MonoBehaviour
     public bool isGameActive;
     public float horizontal;
 
-    private bool isFloored;
+    public bool isFloored;
     public bool hasGift;
     public bool isOutside;
 

@@ -9,8 +9,15 @@ public class Chihuahua : MonoBehaviour
     [SerializeField] int penalty;
     [SerializeField] float waitTime;
 
-    private bool seesPlayer;
+    [SerializeField] bool seesPlayer;
     private bool isAttacking;
+
+    private Vector3 startPosition;
+
+    private void Start()
+    {
+        startPosition = transform.localPosition;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -42,26 +49,43 @@ public class Chihuahua : MonoBehaviour
 
     void Update()
     {
-        if (seesPlayer && isAttacking && GameObject.Find("Player").GetComponent<Player_Movement>().isGameActive == true)
+        if (seesPlayer)
         {
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-            GetComponent<Animator>().SetBool("seesPlayer", true);
+            if (isAttacking && GameObject.Find("Player").GetComponent<Player_Movement>().isGameActive == true)
+            {
+                transform.Translate(speed * Time.deltaTime, 0, 0);
+                GetComponent<Animator>().SetBool("seesPlayer", true);
 
 
-            if (GameObject.Find("Player").transform.position.x - transform.position.x > 0)
-            {
-                speed = speedAmount;
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else if (GameObject.Find("Player").transform.position.x - transform.position.x < 0)
-            {
-                speed = -speedAmount;
-                GetComponent<SpriteRenderer>().flipX = true;
+                if (GameObject.Find("Player").transform.position.x - transform.position.x > 0)
+                {
+                    speed = speedAmount;
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
+                else if (GameObject.Find("Player").transform.position.x - transform.position.x < 0)
+                {
+                    speed = -speedAmount;
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
             }
         }
         else
         {
-            GetComponent<Animator>().SetBool("seesPlayer", false);
+            if (transform.localPosition != startPosition)
+            {
+                GetComponent<Animator>().SetBool("seesPlayer", true);
+               
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, startPosition, speedAmount * Time.deltaTime);
+
+                if (speed < 0)
+                {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
+            }
+            else
+            {
+                GetComponent<Animator>().SetBool("seesPlayer", false);
+            }
         }    
     }
 

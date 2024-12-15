@@ -10,6 +10,9 @@ public class Door : MonoBehaviour
     private Furgonetka doorController;
 
     [SerializeField] Sprite[] sprites;
+    [SerializeField] Sprite[] decorations;
+
+    [SerializeField] GameObject decoration;
     [SerializeField] TextMeshProUGUI doorNumber;
 
     public int number;
@@ -19,6 +22,7 @@ public class Door : MonoBehaviour
         doorController = GameObject.Find("van").GetComponent<Furgonetka>();
 
         GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length)];
+        decoration.GetComponent<SpriteRenderer>().sprite = decorations[Random.Range(0, decorations.Length)];
 
         while (doorController.NumberList.Contains(number) || number == 0)
         {
@@ -42,7 +46,7 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-         if (Input.GetKeyDown(KeyCode.E) && onDoor)
+        if (Input.GetKeyDown(KeyCode.E) && onDoor && GameObject.Find("Player").GetComponent<Player_Movement>().isFloored)
          {
              GameObject.Find("Player").GetComponent<Player_Movement>().hasGift = false;
                 

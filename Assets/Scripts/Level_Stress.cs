@@ -11,7 +11,7 @@ public class Level_Stress : MonoBehaviour
     {
         meterFill.GetComponent<RectTransform>().localScale = new Vector3(1, (jollyAmount/100), 1);
 
-        if (jollyAmount == 0)
+        if (jollyAmount <= 0)
         {
             GameObject.Find("Player").GetComponent<Player_Movement>().LevelLose();
         }
@@ -24,6 +24,11 @@ public class Level_Stress : MonoBehaviour
         if (jollyAmount > 100)
         {
             jollyAmount = 100;
+        }
+
+        if (jollyAmount < 0)
+        {
+            jollyAmount = 0;
         }
     }
 }
