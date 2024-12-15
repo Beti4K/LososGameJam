@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedAmount: 3
-  penalty: 10
+  penalty: 20
   waitTime: 1.5
 --- !u!61 &1963448415428013641
 BoxCollider2D:

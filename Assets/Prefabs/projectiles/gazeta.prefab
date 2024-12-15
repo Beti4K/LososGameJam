@@ -102,11 +102,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8439800100309143975, guid: 7d42416b509f80449b879e4ff08c4e4a, type: 3}
       propertyPath: degrees
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8439800100309143975, guid: 7d42416b509f80449b879e4ff08c4e4a, type: 3}
       propertyPath: penalty
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

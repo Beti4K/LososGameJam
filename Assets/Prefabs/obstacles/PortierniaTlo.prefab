@@ -323,8 +323,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0077500343, y: 0.07365, z: 0}
-    m_Extent: {x: 2.22125, y: 1.56645, z: 0}
+    m_Center: {x: 0.00034999847, y: 0.06575, z: 0}
+    m_Extent: {x: 2.22395, y: 1.55635, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenTime: 5
-  penalty: 25
+  penalty: 40
 --- !u!61 &1821220878301792129
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -572,19 +572,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8085849884971401697, guid: 4a195ced6d7aaa74fa69550a252d3a26, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.027949989
+      value: -0.027700007
       objectReference: {fileID: 0}
     - target: {fileID: 8085849884971401697, guid: 4a195ced6d7aaa74fa69550a252d3a26, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.3189
+      value: 0.3198
       objectReference: {fileID: 0}
     - target: {fileID: 8085849884971401697, guid: 4a195ced6d7aaa74fa69550a252d3a26, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.6877501
+      value: 1.6858001
       objectReference: {fileID: 0}
     - target: {fileID: 8085849884971401697, guid: 4a195ced6d7aaa74fa69550a252d3a26, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.8743
+      value: 0.8627
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -665,19 +665,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8085849884971401697, guid: 4a195ced6d7aaa74fa69550a252d3a26, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.027249992
+      value: -0.028550029
       objectReference: {fileID: 0}
     - target: {fileID: 8085849884971401697, guid: 4a195ced6d7aaa74fa69550a252d3a26, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.3173
+      value: 0.3225
       objectReference: {fileID: 0}
     - target: {fileID: 8085849884971401697, guid: 4a195ced6d7aaa74fa69550a252d3a26, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.68735
+      value: 1.69345
       objectReference: {fileID: 0}
     - target: {fileID: 8085849884971401697, guid: 4a195ced6d7aaa74fa69550a252d3a26, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.8708
+      value: 0.8641
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
