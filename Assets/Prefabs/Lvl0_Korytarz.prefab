@@ -215,7 +215,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000014901161, y: 0}
+  m_Offset: {x: 0, y: -1.3068147}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -226,7 +226,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5567888, y: 2.91}
+  m_Size: {x: 0.5567888, y: 0.2963705}
   m_EdgeRadius: 0
 --- !u!114 &1632877939814823341
 MonoBehaviour:
@@ -240,7 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0836d875a01273146bf92064f8780760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePlayer: {x: 0, y: -2.96, z: 0}
+  isOut: 1
+  movePlayer: {x: 0, y: -2.94, z: 0}
   corridor: {fileID: 5053060129985810695}
 --- !u!1 &7871190658738521870
 GameObject:
@@ -359,7 +360,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1106927190946865335}
+  m_Father: {fileID: 7295489010018727509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3913308995861354405
 SpriteRenderer:
@@ -445,7 +446,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.026400357, y: 0}
+  m_Offset: {x: -0.026400357, y: 0.4488051}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -456,7 +457,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5039882, y: 2.91}
+  m_Size: {x: 0.5039882, y: 2.0123901}
   m_EdgeRadius: 0
 --- !u!114 &2680207685425337417
 MonoBehaviour:
@@ -470,7 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0836d875a01273146bf92064f8780760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePlayer: {x: 0, y: -3.44, z: 0}
+  isOut: 0
+  movePlayer: {x: 0, y: -3.95, z: 0}
   corridor: {fileID: 5053060129985810695}
 --- !u!1001 &4457598949821773612
 PrefabInstance:
@@ -480,6 +482,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -289213567730080213, guid: cbfab61eb683b694bb1a343b444ff57c, type: 3}
+      propertyPath: back
+      value: 
+      objectReference: {fileID: 4843604715330143841}
     - target: {fileID: -289213567730080213, guid: cbfab61eb683b694bb1a343b444ff57c, type: 3}
       propertyPath: front
       value: 
@@ -557,15 +563,20 @@ PrefabInstance:
       addedObject: {fileID: 5425896136836140303}
     - targetCorrespondingSourceObject: {fileID: 3638920365840537499, guid: cbfab61eb683b694bb1a343b444ff57c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1542200029336991945}
-    - targetCorrespondingSourceObject: {fileID: 3638920365840537499, guid: cbfab61eb683b694bb1a343b444ff57c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7469053415927988148}
+    - targetCorrespondingSourceObject: {fileID: 6404780822471721337, guid: cbfab61eb683b694bb1a343b444ff57c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1542200029336991945}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbfab61eb683b694bb1a343b444ff57c, type: 3}
 --- !u!4 &1106927190946865335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3638920365840537499, guid: cbfab61eb683b694bb1a343b444ff57c, type: 3}
+  m_PrefabInstance: {fileID: 4457598949821773612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4843604715330143841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9145511718039777613, guid: cbfab61eb683b694bb1a343b444ff57c, type: 3}
   m_PrefabInstance: {fileID: 4457598949821773612}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5053060129985810695 stripped
@@ -579,3 +590,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918a52f7ec1f0874b9ecfc20890f26db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &7295489010018727509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6404780822471721337, guid: cbfab61eb683b694bb1a343b444ff57c, type: 3}
+  m_PrefabInstance: {fileID: 4457598949821773612}
+  m_PrefabAsset: {fileID: 0}

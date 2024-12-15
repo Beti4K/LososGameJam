@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Poodle : MonoBehaviour
 {
-    private Level_Stress levelStress;
+    private float startSpeed;
+    [SerializeField] float newSpeed;
 
-    [SerializeField] int penalty;
-
-    private void Start()
-    {
-        levelStress = GameObject.Find("level_timer").GetComponent<Level_Stress>();
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        levelStress.JollyPenalty(penalty);
+        if (collision.CompareTag("Player"))
+        {
+            startSpeed = collision.gameObject.GetComponent<Player_Movement>().speed;
+            collision.gameObject.GetComponent<Player_Movement>().speed = newSpeed;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        collision.gameObject.GetComponent<Player_Movement>().speed = startSpeed;
     }
 }

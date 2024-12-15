@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class FrontDoor : MonoBehaviour
 {
+    private GameObject player;
     private bool atDoor;
+    private bool isEntering;
+    [SerializeField] bool isOut;
     [SerializeField] Vector3 movePlayer;
     [SerializeField] Corridor corridor;
 
@@ -18,20 +21,60 @@ public class FrontDoor : MonoBehaviour
         atDoor = false;
     }
 
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+    }
+
     void Update()
     {
         if (atDoor && (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)))
         {
-            if (GameObject.Find("Player").GetComponent<Player_Movement>().isOutside)
-            {
-                GameObject.Find("Player").GetComponent<Player_Movement>().isOutside = false;
-            }
-            else
-            {
-                GameObject.Find("Player").GetComponent<Player_Movement>().isOutside = true;
-            }
+            StartCoroutine(Enter());
+        }
 
-            GameObject.Find("Player").transform.position = movePlayer;
+        if (isEntering)
+        {
+            player.transform.position = movePlayer;
+        }
+    }
+
+    private IEnumerator Enter()
+    {
+        player.GetComponent<Animator>().Play("Enter");
+
+        yield return new WaitForSeconds(0.3f);
+
+        GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+        player.GetComponent<Collider2D>().enabled = false;
+        player.GetComponent<Rigidbody2D>().gravityScale = 0;
+        isEntering = true;
+
+        player.GetComponent<Player_Movement>().isOutside = !isOut;
+
+        player.GetComponent<Collider2D>().enabled = true;
+        player.GetComponent<Rigidbody2D>().gravityScale = 1;
+        isEntering = false;
+
+        player.GetComponent<Player_Movement>().isGameActive = true;
+        player.GetComponent<SpriteRenderer>().enabled = true;
+
+        if (player.GetComponent<Player_Movement>().hasGift)
+        {
+            player.GetComponent<Animator>().Play("Out_gift");
+        }
+        else
+        {
+            player.GetComponent<Animator>().Play("Out_nogift");
+        }
+
+        if (player.GetComponent<Player_Movement>().hasGift)
+        {
+            player.GetComponent<Animator>().Play("Idle_gift");
+        }
+        else
+        {
+            player.GetComponent<Animator>().Play("Idle_nogift");
         }
     }
 }

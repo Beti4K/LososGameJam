@@ -8,6 +8,7 @@ public class Corridor : MonoBehaviour
     [SerializeField] Sprite[] spritesFront;
 
     [SerializeField] GameObject front;
+    [SerializeField] GameObject back;
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = wallpaper[Random.Range(0, wallpaper.Length)];
@@ -19,12 +20,12 @@ public class Corridor : MonoBehaviour
         if (GameObject.Find("Player").GetComponent<Player_Movement>().isOutside)
         {
             front.SetActive(true);
-            GetComponent<Collider2D>().enabled = false;
+            back.SetActive(false);
         }
         else
         {
             front.SetActive(false);
-            GetComponent<Collider2D>().enabled = true;
+            back.SetActive(true);
         }
     }
 }

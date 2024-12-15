@@ -12,7 +12,7 @@ public class Player_Movement : MonoBehaviour
     public bool isOutside;
 
     [SerializeField] float force;
-    [SerializeField] float speed;
+    public float speed;
 
     [SerializeField] GameObject loseScreen;
 

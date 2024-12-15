@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Chihuahua : MonoBehaviour
 {
-    [SerializeField] int speed;
+    [SerializeField] int speedAmount;
+    private int speed;
     [SerializeField] int penalty;
     [SerializeField] float waitTime;
 
@@ -49,12 +50,12 @@ public class Chihuahua : MonoBehaviour
 
             if (GameObject.Find("Player").transform.position.x - transform.position.x > 0)
             {
-                speed = 2;
+                speed = speedAmount;
                 GetComponent<SpriteRenderer>().flipX = false;
             }
             else if (GameObject.Find("Player").transform.position.x - transform.position.x < 0)
             {
-                speed = -2;
+                speed = -speedAmount;
                 GetComponent<SpriteRenderer>().flipX = true;
             }
         }
@@ -69,11 +70,5 @@ public class Chihuahua : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         waitTime = 0;
         isAttacking = true;
-
-        if (GameObject.Find("Player").transform.position.x - transform.position.x < 0)
-        {
-            speed *= -1;
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
     }
 }
