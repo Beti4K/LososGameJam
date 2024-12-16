@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2493517678938246443}
   - component: {fileID: 1125246161641540329}
   m_Layer: 0
-  m_Name: Lampa
+  m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.1232, y: -1.6805999, z: 0}
-    m_Extent: {x: 1.9988, y: 2.1775, z: 0}
+    m_Center: {x: -0.12674999, y: -1.68215, z: 0}
+    m_Extent: {x: 2.00155, y: 2.17685, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -191,6 +191,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3326647422003792206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3418c34e41de48845b1bb75da8120827, type: 3}
+  m_Script: {fileID: 11500000, guid: a55ddd3cf49f5ac47a6d47c7ae67fdd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 2e01a587da96b10488040e8a7177ce75, type: 3}
+  - {fileID: 21300000, guid: 65c031bc37f33ad4fb5fe5601ed11800, type: 3}
+  isBroken: 0

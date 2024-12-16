@@ -9,12 +9,11 @@ public class Secret : MonoBehaviour
     [SerializeField] int attemptsNeeded = 5;
 
     private bool onElevator;
-    private bool onDoor;
     void Update()
     {
         if (attemptsNeeded == attempts)
         {
-            GetComponent<Elevator>().endPosition = new Vector3(6.94f, -13.72f, 0);
+            GetComponent<Elevator>().endPosition = new Vector3 (6.94f, -13.72f, 0);
             GetComponent<Elevator>().time = 4;
         }
 

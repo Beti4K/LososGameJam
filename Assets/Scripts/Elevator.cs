@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
+    [SerializeField] GameObject referencePosition;
     public Vector3 endPosition;
     public float time;
+    private float delay = 0.3f;
 
     private bool onElevator;
     private bool isMoving;
@@ -18,10 +20,16 @@ public class Elevator : MonoBehaviour
     {
         player = GameObject.Find("Player");
 
+        endPosition = new Vector3(0, 1, 0);
+
         if (isBroken)
         {
-            endPosition = transform.localPosition;
+            endPosition += transform.position;
             brokenSign.SetActive(true);
+        }
+        else
+        {
+            endPosition += referencePosition.transform.position;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,7 +68,7 @@ public class Elevator : MonoBehaviour
     {
         player.GetComponent<Animator>().Play("Enter");
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(delay);
 
         GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
         player.GetComponent<Collider2D>().enabled = false;
@@ -84,7 +92,7 @@ public class Elevator : MonoBehaviour
             player.GetComponent<Animator>().Play("Out_nogift");
         }
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(delay);
 
         if (player.GetComponent<Player_Movement>().hasGift)
         {

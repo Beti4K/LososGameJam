@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5916578532711268934}
   - component: {fileID: 646166840857369961}
   - component: {fileID: 6248661480031188363}
-  - component: {fileID: 8677144556529224101}
+  - component: {fileID: 2312380809219239377}
   m_Layer: 0
   m_Name: Zsup
   m_TagString: Untagged
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.39, y: 1.09}
   m_EdgeRadius: 0
---- !u!114 &8677144556529224101
+--- !u!114 &2312380809219239377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3789899640493207654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed6cdc6e7ebbbd24aa148e442dfb13b8, type: 3}
+  m_Script: {fileID: 11500000, guid: f88237d75d44f804ba7a42867f91204b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: 0, y: -2.96, z: 0}
+  endPosition: {fileID: 0}
+  time: 0.1

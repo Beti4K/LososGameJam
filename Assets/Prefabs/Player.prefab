@@ -195,6 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameActive: 0
   horizontal: 0
+  isFloored: 0
   hasGift: 0
   isOutside: 1
   force: 5

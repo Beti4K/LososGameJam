@@ -183,7 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228867b313e94bf428c3ad20f96b8458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: 6.8, y: 0, z: 0}
+  referencePosition: {fileID: 0}
+  endPosition: {x: 0, y: 1, z: 0}
   time: 2
   brokenSign: {fileID: 1325146688181763387}
   isBroken: 0

@@ -3,22 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class Lamp_Broken : MonoBehaviour
+public class Lamp : MonoBehaviour
 {
+    [SerializeField] Sprite[] sprites;
+    [SerializeField] bool isBroken;
+
     void Start()
     {
-        StartCoroutine(FlashLight());
         GetComponent<Light2D>().enabled = false;
-    }
 
-    private void Update()
-    {
-        if (GameObject.Find("Player").GetComponent<Player_Movement>().isOutside)
+        if (isBroken)
         {
-            GetComponent<Light2D>().enabled = false;
+            GetComponent<SpriteRenderer>().sprite = sprites[1];
+            StartCoroutine(FlashLight());
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = sprites[0];
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!isBroken && collision.CompareTag("Player") && GetComponent<Light2D>().enabled == false)
+        {
+            StartCoroutine(LightsOff());
+        }
+    }
+
+    private IEnumerator LightsOff()
+    {
+        GetComponent<Light2D>().enabled = true;
+
+        yield return new WaitForSeconds(5);
+
+        GetComponent<Light2D>().enabled = false;
+    }
     private IEnumerator FlashLight()
     {
         GetComponent<Light2D>().enabled = false;

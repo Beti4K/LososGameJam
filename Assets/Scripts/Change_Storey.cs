@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Change_Storey : MonoBehaviour
 {
-    [SerializeField] Vector3 endPosition;
+    [SerializeField] GameObject endPosition;
+    [SerializeField] float time;
     private bool onStairs;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,8 +38,8 @@ public class Change_Storey : MonoBehaviour
 
     private IEnumerator AnimDelay()
     {
-        yield return new WaitForSeconds(0.3f);
-        GameObject.Find("Player").transform.position = endPosition;
+        yield return new WaitForSeconds(time);
+        GameObject.Find("Player").transform.position = endPosition.transform.position;
 
         if (GameObject.Find("Player").GetComponent<Player_Movement>().hasGift)
         {
@@ -49,7 +50,7 @@ public class Change_Storey : MonoBehaviour
             GameObject.Find("Player").GetComponent<Animator>().Play("Out_nogift");
         }
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(time);
 
         if (GameObject.Find("Player").GetComponent<Player_Movement>().hasGift)
         {
