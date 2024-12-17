@@ -52,6 +52,6 @@ public class InitialCutscene : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         Time.timeScale = 0;
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("TutorialLevel");
     }
 }

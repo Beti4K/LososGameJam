@@ -9,6 +9,7 @@ public class Level_Timer : MonoBehaviour
     private GameObject player;
 
     [SerializeField] TextMeshProUGUI timer;
+    [SerializeField] GameObject clock;
 
     void Start()
     {
@@ -26,6 +27,15 @@ public class Level_Timer : MonoBehaviour
         {
             timer.text = "0";
         }
+
+        if (levelTime <= 20)
+        {
+            timer.color = new Color32(155, 32, 30, 255);
+        }
+        else
+        {
+            timer.color = Color.black;
+        }
     }
 
     private IEnumerator TimePass()
@@ -40,6 +50,22 @@ public class Level_Timer : MonoBehaviour
         else
         {
             StartCoroutine(TimePass());
+        }
+
+        if (levelTime <= 20)
+        {
+            StartCoroutine(Pulse());
+        }
+    }
+
+    private IEnumerator Pulse()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            clock.GetComponent<RectTransform>().localScale = new Vector3(1.1f, 1.1f, 1.1f);
+            yield return new WaitForSeconds(0.25f);
+            clock.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            yield return new WaitForSeconds(0.25f);
         }
     }
 

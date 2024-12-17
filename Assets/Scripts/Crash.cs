@@ -27,6 +27,6 @@ public class Crash : MonoBehaviour
         {
             levelStress.JollyPenalty(penalty);
         }
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

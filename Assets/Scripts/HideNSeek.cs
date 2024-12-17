@@ -6,11 +6,13 @@ public class HideNSeek : MonoBehaviour
 {
     [SerializeField] float hiddenTime;
     [SerializeField] int penalty;
+    [SerializeField] GameObject lightRoom;
     private bool isLooking;
     void Start()
     {
         StartCoroutine(LookDelay());
         isLooking = false;
+        lightRoom.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -39,11 +41,13 @@ public class HideNSeek : MonoBehaviour
 
         GetComponent<Animator>().SetBool("isLooking", true);
         isLooking = true;
+        lightRoom.SetActive(true);
 
         yield return new WaitForSeconds(0.75f);
 
         GetComponent<Animator>().SetBool("isLooking", false);
         isLooking = false;
+        lightRoom.SetActive(false);
 
         StartCoroutine(LookDelay());
     }

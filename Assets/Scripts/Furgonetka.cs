@@ -29,7 +29,7 @@ public class Furgonetka : MonoBehaviour
 
     private GameManager gameManager;
 
-    public int targetDoor;
+    public int targetDoor = 0;
     public int points;
 
     private void Start()
@@ -37,7 +37,11 @@ public class Furgonetka : MonoBehaviour
         numberDisplay.SetActive(false);
         giftDisplay.SetActive(false);
         points = 0;
+
         doors = GameObject.FindGameObjectsWithTag("Door");
+
+        //targetDoor = doors[Random.Range(0, doors.Length)].gameObject.GetComponent<Door>().number;
+
         gameManager = GameManager.Instance;
     }
 
@@ -66,7 +70,7 @@ public class Furgonetka : MonoBehaviour
             player.hasGift = true;
 
             targetDoor = doors[Random.Range(0, doors.Length)].gameObject.GetComponent<Door>().number;
-
+            
             numberDisplayText.text = targetDoor.ToString();
             giftsLeftText.text = points + "/" + maxPoints;
         }

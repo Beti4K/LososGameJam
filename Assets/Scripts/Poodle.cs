@@ -18,6 +18,9 @@ public class Poodle : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<Player_Movement>().speed = startSpeed;
+        if (collision.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Player_Movement>().speed = startSpeed;
+        }
     }
 }

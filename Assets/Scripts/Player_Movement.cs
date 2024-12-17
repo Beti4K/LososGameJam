@@ -21,6 +21,7 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         isFloored = true;
+        hasGift = false;
         gameManager = GameManager.Instance;
 
         if (gameManager.didLose)
