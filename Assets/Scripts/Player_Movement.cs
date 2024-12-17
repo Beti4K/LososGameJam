@@ -16,10 +16,21 @@ public class Player_Movement : MonoBehaviour
 
     [SerializeField] GameObject loseScreen;
 
+    private GameManager gameManager;
+
     void Start()
     {
-        isGameActive = true;
         isFloored = true;
+        gameManager = GameManager.Instance;
+
+        if (gameManager.didLose)
+        {
+            StartCoroutine(GetUp());
+        }
+        else
+        {
+            isGameActive = true;
+        }
     }
 
     void Update()
@@ -80,7 +91,26 @@ public class Player_Movement : MonoBehaviour
     {
         isGameActive = false;
 
-        GetComponent<Animator>().SetBool("isEnd", true);
+        StartCoroutine(Die());
+
+        gameManager.didLose = true;
+    }
+
+    private IEnumerator Die()
+    {
+        GetComponent<Animator>().Play("Death");
+        yield return new WaitForSeconds(1);
+
         loseScreen.SetActive(true);
+    }
+
+    private IEnumerator GetUp()
+    {
+        isGameActive = false;
+
+        GetComponent<Animator>().Play("GetUp");
+        yield return new WaitForSeconds(0.5f);
+
+        isGameActive = true;
     }
 }

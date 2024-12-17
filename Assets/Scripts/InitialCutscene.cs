@@ -51,6 +51,7 @@ public class InitialCutscene : MonoBehaviour
         chopaki.SetActive(true);
         yield return new WaitForSeconds(2f);
 
+        Time.timeScale = 0;
         SceneManager.LoadScene("Level1");
     }
 }

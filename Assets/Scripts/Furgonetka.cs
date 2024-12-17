@@ -21,10 +21,13 @@ public class Furgonetka : MonoBehaviour
 
     [SerializeField] GameObject wheels;
     [SerializeField] GameObject chopaki;
+    [SerializeField] GameObject arrow;
 
     [SerializeField] GameObject winScreen;
 
     [SerializeField] int maxPoints;
+
+    private GameManager gameManager;
 
     public int targetDoor;
     public int points;
@@ -35,6 +38,7 @@ public class Furgonetka : MonoBehaviour
         giftDisplay.SetActive(false);
         points = 0;
         doors = GameObject.FindGameObjectsWithTag("Door");
+        gameManager = GameManager.Instance;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -73,6 +77,7 @@ public class Furgonetka : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = true;
             wheels.GetComponent<SpriteRenderer>().enabled = true;
             chopaki.GetComponent<SpriteRenderer>().enabled = true;
+            arrow.GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
@@ -80,6 +85,7 @@ public class Furgonetka : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             wheels.GetComponent<SpriteRenderer>().enabled = false;
             chopaki.GetComponent<SpriteRenderer>().enabled = false;
+            arrow.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         if (points == maxPoints)
@@ -91,5 +97,6 @@ public class Furgonetka : MonoBehaviour
     private void LevelWin()
     {
         winScreen.SetActive(true);
+        gameManager.didLose = false;
     }
 }

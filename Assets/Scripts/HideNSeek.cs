@@ -7,7 +7,6 @@ public class HideNSeek : MonoBehaviour
     [SerializeField] float hiddenTime;
     [SerializeField] int penalty;
     private bool isLooking;
-    private bool isImmune;
     void Start()
     {
         StartCoroutine(LookDelay());
@@ -16,9 +15,8 @@ public class HideNSeek : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isLooking && !isImmune)
+        if (isLooking)
         {
-            StartCoroutine(ZoneDmgStop());
             GameObject.Find("level_timer").GetComponent<Level_Stress>().JollyPenalty(penalty);
         }
     }
@@ -48,14 +46,5 @@ public class HideNSeek : MonoBehaviour
         isLooking = false;
 
         StartCoroutine(LookDelay());
-    }
-
-    private IEnumerator ZoneDmgStop()
-    {
-        isImmune = true;
-
-        yield return new WaitForSeconds(5);
-
-        isImmune = false;
     }
 }

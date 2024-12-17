@@ -26,6 +26,7 @@ public class Elevator : MonoBehaviour
         {
             endPosition += transform.position;
             brokenSign.SetActive(true);
+            time = 1;
         }
         else
         {

@@ -36,6 +36,7 @@ public class Chihuahua : MonoBehaviour
         {
             seesPlayer = false;
             waitTime = 1;
+            isAttacking = false;
         }
     }
 

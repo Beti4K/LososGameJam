@@ -1640,6 +1640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meterFill: {fileID: 4515024390060765729}
+  meter: {fileID: 6340976063116328468}
   jollyAmount: 100
 --- !u!1 &6987430890552115639
 GameObject:
