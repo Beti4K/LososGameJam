@@ -163,6 +163,10 @@ PrefabInstance:
       propertyPath: m_LocalBounds.m_Extent.y
       value: 2.1734
       objectReference: {fileID: 0}
+    - target: {fileID: 3428966594475634630, guid: 8899283df7778a54f8dc0a302ae53018, type: 3}
+      propertyPath: m_text
+      value: Level 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3786715559470384459, guid: 8899283df7778a54f8dc0a302ae53018, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
       value: -0.12709993

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Furgonetka : MonoBehaviour
 {
@@ -39,8 +40,6 @@ public class Furgonetka : MonoBehaviour
         points = 0;
 
         doors = GameObject.FindGameObjectsWithTag("Door");
-
-        //targetDoor = doors[Random.Range(0, doors.Length)].gameObject.GetComponent<Door>().number;
 
         gameManager = GameManager.Instance;
     }
@@ -102,5 +101,12 @@ public class Furgonetka : MonoBehaviour
     {
         winScreen.SetActive(true);
         gameManager.didLose = false;
+
+        if (gameManager.lastLevel <= int.Parse(SceneManager.GetActiveScene().name.Substring(SceneManager.GetActiveScene().name.Length - 1)))
+        {
+            gameManager.lastLevel += 1;
+        }
+
+        gameManager.SaveGame();
     }
 }

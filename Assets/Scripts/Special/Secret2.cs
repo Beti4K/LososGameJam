@@ -26,6 +26,7 @@ public class Secret2 : MonoBehaviour
         if (onDoor && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)))
         {
             SceneManager.LoadScene("LevelSecret");
+            GameManager.Instance.secretLevel = true;
         }
     }
 }

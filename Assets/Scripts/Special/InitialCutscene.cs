@@ -15,7 +15,14 @@ public class InitialCutscene : MonoBehaviour
     [SerializeField] GameObject chopaki;
 
     private bool moveCamera = false;
+    private bool moveCamera2 = false;
     private bool moveVan = false;
+
+    public void ChooseLevel()
+    {
+        menuUI.SetActive(false);
+        moveCamera2 = !moveCamera2;
+    }
     public void StartCutscene()
     {
         chopaki.SetActive(false);
@@ -30,6 +37,19 @@ public class InitialCutscene : MonoBehaviour
             if (cutsceneCamera.transform.position == new Vector3(0, -1.05f, -10))
             {
                 moveVan = true;
+            }
+        }
+
+        if(moveCamera2)
+        {
+            cutsceneCamera.transform.position = Vector3.MoveTowards(cutsceneCamera.transform.position, new Vector3(0, 33, -10), 7 * Time.deltaTime);
+        }
+        else if (!moveCamera2 && !moveCamera)
+        {
+            cutsceneCamera.transform.position = Vector3.MoveTowards(cutsceneCamera.transform.position, new Vector3(0, 19.76f, -10), 7 * Time.deltaTime);
+            if (cutsceneCamera.transform.position == new Vector3(0, 19.76f, -10))
+            {
+                menuUI.SetActive(true);
             }
         }
 
@@ -52,6 +72,6 @@ public class InitialCutscene : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         Time.timeScale = 0;
-        SceneManager.LoadScene("TutorialLevel");
+        SceneManager.LoadScene("TutorialLevel0");
     }
 }
